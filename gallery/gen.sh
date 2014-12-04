@@ -1,5 +1,8 @@
 #!/bin/bash
+a=0
 for i in $(ls photos ); do
- echo -n "<a href=\"gallery/photos/$i\" title=\"100PIKS\" data-gallery ><img src=\"gallery/thumbnails/JPEG/$i\"></a>"
+ title=$(printf "2014@MADA#%02d" "$a")
+ echo -n "<a href=\"gallery/squared/$i\" title=\"$title\" data-gallery ><img src=\"gallery/thumbnails/$i\"></a>"
+ let a=a+1
 done
-echo
+
